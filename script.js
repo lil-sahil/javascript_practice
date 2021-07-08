@@ -139,4 +139,26 @@ function factorial(number){
     return answer;
 }
 
-console.log(factorial(10));
+// console.log(factorial(10));
+
+function isPalindrome(str){
+    str = str.split(' ').join('');
+    str = str.replace(/[^\w]/g,"");
+    str = str.toLowerCase();
+
+    let backwardStr = '';
+
+    for (let i = str.length -1; i > -1; i--){
+        backwardStr += str[i];
+    }
+
+    return (str === backwardStr ? true : false);
+
+}
+
+// console.log(isPalindrome('Animal loots foliated detail of stool lamina.'));
+
+function fibo(){
+    return false;
+}
+
