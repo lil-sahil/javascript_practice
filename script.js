@@ -139,4 +139,87 @@ function factorial(number){
     return answer;
 }
 
-console.log(factorial(10));
+// console.log(factorial(10));
+
+function fibo(quantity){
+
+    quanity = parseInt(quantity);
+
+    if (quantity<0){
+        return 'Enter positive number.'
+    }
+    
+    else if ( (quantity === 1) || (quantity === 2) ){
+        return 1;
+    }
+
+    else if (quantity === 0){
+        return 0;
+    }
+    
+    let previous = 1;
+    let answer = 0;
+    let current = 1;
+
+    for(let i = 3; i <= quantity; i++){
+        answer = current + previous;
+        previous = current;
+        current = answer;
+    }
+
+    return answer;
+}
+
+// console.log(fibo('25'));
+
+
+const books = [
+    {
+      title: 'Book',
+      author: 'Name'
+    },
+    {
+      title: 'Book2',
+      author: 'Name2'
+    }
+  ]
+
+function getTitles(objects){
+    let arr = []
+    objects.filter(object => arr.push(object.title));
+    return arr;
+}
+
+// console.log(getTitles(books));
+
+
+const people = [
+    {
+      name: "Carly",
+      yearOfBirth: 1942, 
+    },
+    {
+      name: "Ray",
+      yearOfBirth: 1962,
+      yearOfDeath: 1964,  
+    },
+    {
+      name: "Jane",
+      yearOfBirth: 1912,
+      yearOfDeath: 1913, 
+    },
+  ]
+
+
+// people.map(person => console.log(person.yearOfDeath=2008));
+function oldest(objects){
+    let date = new Date();
+    let currentYear = date.getFullYear();
+
+    objects.map(person => (person.yearOfDeath === undefined) ? person.yearOfDeath = currentYear : person.yearOfDeath);
+    let arr = objects.sort((a,b) => (a.yearOfDeath-a.yearOfBirth) > (b.yearOfDeath-b.yearOfBirth) ? -1 : 1 );
+
+    return arr[0];
+}
+
+// console.table(oldest(people));
