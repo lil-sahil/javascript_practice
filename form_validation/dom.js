@@ -16,3 +16,11 @@ export const passwordForm = () => {
 export const verifyForm = () => {
   return document.querySelector('label #verify')
 }
+
+export const allInput = () => {
+  return document.querySelectorAll('input')
+}
+
+export const submitButton = () => {
+  return document.querySelector('button')
+}

@@ -2,10 +2,35 @@ import { emailForm,
          countryForm,
          zipForm,
          passwordForm,
-         verifyForm
+         verifyForm,
+         allInput,
+         submitButton
         } from './dom.js';
 
 
+class submitLogic {
+
+  checkAllValid () {
+    for (const field of allInput()){
+      if (field.classList.contains('no-error')){
+        
+        
+      } else {
+        console.log('Did not Submit')
+        return 1
+      }
+    }
+    console.log('Form Submitted')
+  }
+
+  addEvent () {
+    
+    submitButton().addEventListener('click', () => {
+      this.checkAllValid();
+    })
+  }
+
+}
 
 class FormValidation {
   
@@ -78,3 +103,4 @@ class FormValidation {
 }
 
 new FormValidation().applyValidations()
+new submitLogic().addEvent()
